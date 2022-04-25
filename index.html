@@ -1,0 +1,149 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+  <title>Регистрация</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+      <main>
+		<form action="check.php" method="post">			
+			<fieldset>
+				<legend>Личная информация</legend>
+				   
+				<p>
+					<label for="lastname" class="req">Фамилия: </label>
+					<input type="text" size="20" id="lastname" required >
+				</p>
+				
+				<p>
+				<label for="name"  required class="req">Имя: </label>
+				<input type="text" size="20" id="firstname" required>
+			
+				</p>
+				
+				<p>
+						<label for="patronymic">Отчество: </label>
+						<input type="text" size="20" id="patronymic">
+					</p>
+				
+				<p>
+					<label class="req"  for="gender" required>Пол</label>
+					<select name="gender" id="gender" required>
+						<option value=""></option>
+						<option value="1">Мужской</option>
+						<option value="2">Женский</option>
+					</select>
+				</p>
+				
+				<p>
+					<label for="color">Цвет глаз: </label>
+					<input type="color" name="color">
+				</p>
+				
+				<p>
+					<lable class="req"> Дата рождения: </lable>
+                <input type="date" id="start" name="trip-start" required></p>
+				
+		<p>
+		    <label for="age" class="req">Возраст (от 18 до 100): </label>
+			<input type="number" name="age" min="18" max="100" value="18">
+		</p>
+				<p>
+				<lable class="req">Место рождения:</lable>				
+	                <select  name="user_city" required>
+                         <optgroup label="Россия">
+                         <option value="1">Москва</option>
+                         <option value="2">Санкт-Петербург</option>
+                         <option value="3">Новосибирск</option><br>
+                         <option value="4">Саратов</option><br>
+                         <option value="5">Краснодар</option><br>
+                         <option value="6">Энгельс</option><br>
+                         </optgroup>
+                  <optgroup label="Беларусь">
+                      <option value="7">Минск</option>
+                       <option value="8">Бобруйск</option>
+                        <option value="9">Гомель</option>
+                      </optgroup>
+                      </select>	
+				</p>
+			</fieldset>
+			<fieldset class="contacts">
+					<legend>Контактная информация</legend>
+				<p>
+				<lable class="req">Индекс:</lable>
+				<input type="text" min="1000" max="9999" required>
+				</p>
+				
+				<p>
+					<label for="address" class="req">Адрес проживания: </label>
+					<input type="text" id="address" required>
+				</p>
+				
+				<p> <label class="req">Дата регитсрации:</label>
+				    <input type="date" value="today" required/>
+				</p>
+				
+				<p>
+						<label for="phonenumber" class="req">Номер телефона в формате: </label>
+						<input type="tel" id="phonenumber" placeholder="+7-123-456-78-90" pattern="+7-[0-9]{3}-[0-9]{3}-[0-9]{2}-[0-9]{2}" required>
+					</p>
+				<p>
+						<label for="email" class="req">E-mail: </label>
+						<input type="email" id="email" required>
+					</p>
+				</fieldset>
+			
+                <fieldset class="general">
+					<legend>Документы</legend>
+					<p>
+						<label for="doc" class="req">Загрузите отсканированную первую страницу паспорта </label>
+						<input type="file" name="jpeg" accept="image/jpeg" required>
+					</p>
+ 			</fieldset>
+					
+			<fieldset class="general">
+					<legend>Общая информация</legend>
+					
+						<label for="info">Как Вы узнали об этом магазине? </label>
+				<p>
+						<select name="info" id="info" multiple="multiple">
+							<option value="1">Социальные сети.</option>
+							<option value="2">Реклама в роликах.</option>
+							<option value="3">Реклама в телевиденье</option>
+							<option value="4">Увидел(-а) объявление</option>
+							<option value="5">Посветовали знакомые</option>
+						</select>
+					</p>
+				</fieldset>
+			<fieldset class="send">
+					<p>
+						<input type="checkbox" id="agree" required> <label  for="agree" class="req">Я согласен(-а) на обработку персональных данных</label><br>
+						<input type="submit">
+						
+						<input type="reset">
+					</p>
+				</fieldset>
+			</form>
+		</main>
+			<script>
+			// Скрипт, запрещающий использование любых символов, кроме русского алфавита.
+			let input1 = document.querySelector('#lastname');
+			input1.addEventListener('input',() => {
+				input1.value = input1.value.replace(/[a-z0-9]/gi,'');
+			});
+			
+			let input2 = document.querySelector('#firstname');
+			input2.addEventListener('input',() => {
+				input2.value = input2.value.replace(/[a-z0-9]/gi,'');
+			});
+			
+			let input3 = document.querySelector('#patronymic');
+			input3.addEventListener('input',() => {
+				input3.value = input3.value.replace(/[a-z0-9]/gi,'');
+			});
+		</script>
+	
+</body>
+</html>

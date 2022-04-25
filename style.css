@@ -1,0 +1,21 @@
+ .req:after {
+    content:" *";
+    color: red;
+  }
+
+legend {
+background-color: gray;
+color: white;
+padding: 6px 123px;
+display: flex;
+
+}
+
+label {
+	
+	display: flex;
+    
+    width: 60%;
+    margin: .5rem;
+}
+
